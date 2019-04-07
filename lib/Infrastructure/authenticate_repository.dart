@@ -5,7 +5,7 @@ import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:walltime_player/Domain/storage_keys.dart';
 
 abstract class AuthenticateRepository {
-  Future<Agent> login(LoginQuery command);
+  Future<Agent> login(LoginCommand command);
 }
   
 class BaseApi {
@@ -38,16 +38,16 @@ class AuthenticationError implements Exception {
   AuthenticationError(this.reason);
 }
 
-class LoginQuery {
+class LoginCommand {
   final String email;
   final String password;
 
-  LoginQuery(@required this.email, @required this.password);
+  LoginCommand(@required this.email, @required this.password);
 }
   
 class AuthenticateRepositoryImp implements AuthenticateRepository {
   @override
-  Future<Agent> login(LoginQuery command) {
+  Future<Agent> login(LoginCommand command) {
       
   }
 
